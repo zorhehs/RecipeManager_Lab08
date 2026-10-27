@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Recipe Management System</h1>
+    <p>Add, view, update and delete your recipes</p>
+</header>
+
+<main>
+    <section class="card" id="formCard">
+        <h2 id="formTitle">Add New Recipe</h2>
+        <form id="recipeForm" novalidate>
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="e.g. Chicken Karahi">
+            <span class="error" id="titleError"></span>
+
+            <label for="ingredients">Ingredients</label>
+            <textarea id="ingredients" rows="4" placeholder="One ingredient per line"></textarea>
+            <span class="error" id="ingredientsError"></span>
+
+            <label for="instructions">Instructions</label>
+            <textarea id="instructions" rows="5" placeholder="Write the steps"></textarea>
+            <span class="error" id="instructionsError"></span>
+
+            <label for="image">Image</label>
+            <input type="file" id="image" accept="image/*">
+            <span class="error" id="imageError"></span>
+            <img id="preview" class="preview hidden" alt="Preview">
+
+            <div class="buttons">
+                <button type="submit" id="saveBtn">Add Recipe</button>
+                <button type="button" id="cancelBtn" class="grey hidden">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="card">
+        <div class="listHead">
+            <h2>All Recipes</h2>
+            <input type="text" id="search" placeholder="Search by title or ingredient">
+        </div>
+        <div id="list"></div>
+        <div id="pager" class="pager"></div>
+    </section>
+</main>
+
+<div id="modal" class="modal hidden">
+    <div class="modalBox">
+        <button id="closeBtn" class="close">&times;</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
